@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel Deneme
+                    Laravel Deneme1111
                 </div>
 
                 <div class="links">
