@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::group(['prefix'=>'yonetim'], function (){
+    Route::get('/','AdminController@index')->name('admin.index');
+    Route::get('/sayfalar','AdminController@sayfalar')->name('admin.sayfalarIndex');
+    Route::get('/sayfaekle','AdminController@sayfaEkle')->name('admin.sayfaEkle');
+    Route::get('/sayfaeduzenle','AdminController@sayfaDuzenle')->name('admin.sayfaDuzenle');
+    Route::post('/sayfakaydet','AdminController@sayfaCreate')->name('admin.sayfaCreate');
+});
