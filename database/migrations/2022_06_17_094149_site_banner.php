@@ -17,6 +17,7 @@ class SiteBanner extends Migration
             $table->increments('id');
             $table->string('dosya_adi', 300);
             $table->string('gorsel', 350);
+            $table->string('link', 350)->nullable();
             $table->boolean('aktif_pasif')->default(1);
             $table->timestamps();
         });

@@ -25,7 +25,7 @@
                             <label class="form-label">Menü</label>
                             <select class="form-control custom-select" name="menu" id="menu">
                                 @foreach($menuler as $menu)
-                                    <option value="{{$menu->id}}">{{$menu->menu_adi}}</option>
+                                    <option value="{{$menu->id}}">{{$menu->baslik}}</option>
                                 @endforeach
                             </select>
                         </div>

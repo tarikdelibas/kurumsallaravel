@@ -6,7 +6,7 @@
                 <div class="card-header">
                     <div class="col-lg-11"><h3 class="card-title">Sayfalar</h3></div>
                     <div class="col-lg-1">
-                        <a href="">
+                        <a href="{{route('admin.sayfaEkle')}}">
                             <input type="button" value="+ Sayfa Ekle" class="btn btn-blue" style="position: relative; right: 0; margin-right: 5%;">
                         </a>
                     </div>
@@ -27,14 +27,14 @@
                             @foreach($sayfalar as $sayfa)
                                 <tr>
                                     <td><span class="text-muted">{{$sayfa->id}}</span></td>
-                                    <td><img src="../../{{$sayfa->sayfa_gorsel}}" width="80" height="80"></td>
-                                    <td>{{$sayfa->baslik}}</td>
-                                    <form method="post" action="{{route('admin.sayfaSil',$sayfa->id)}}">
+                                    <td><img src="../{{$sayfa->gorsel}}" width="80" height="80"></td>
+                                    <td><a href="../{{$sayfa->slug}}">{{$sayfa->baslik}}</a></td>
+                                    <form method="get" action="{{route('admin.sayfaSil',$sayfa->id)}}">
                                         @csrf
                                         <td><button type="submit" class="btn btn-danger btn-sm">Sil</button></td>
                                     </form>
                                     <td>
-                                        <a class="icon" href="{{route('admin.sayfaDuzenle', $sayfa->id)}}">
+                                        <a class="icon" href="{{route('admin.sayfaDuzenle',$sayfa->id)}}">
                                             <i class="fe fe-edit"></i>
                                         </a>
                                     </td>

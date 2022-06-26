@@ -22,7 +22,9 @@ class Sayfalar extends Migration
             $table->text('aciklama');
             $table->string('gorsel', 255);
             $table->integer('menu_id')->unsigned();
+            $table->integer('ust_sayfa_id')->nullable();
             $table->foreign('menu_id')->references('id')->on('menu')->onDelete('cascade');
+            $table->foreign('ust_sayfa_id')->references('id')->on('sayfalar')->onDelete('cascade');
             $table->timestamps();
         });
     }

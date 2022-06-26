@@ -4,9 +4,9 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Sayfa Ekle</h3>
+                    <h3 class="card-title">Sayfa Düzenle</h3>
                 </div>
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="{{route('admin.sayfaUpdate')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <fieldset class="form-fieldset">
                         <div class="form-group">
@@ -15,17 +15,17 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label">Kısa Açıklama<span class="form-required">*</span></label>
-                            <input type="text" class="form-control" name="kisa_aciklama" value="{{$sayfa->baslik}}" required/>
+                            <input type="text" class="form-control" name="kisa_aciklama" value="{{$sayfa->kisa_aciklama}}" required/>
                         </div>
                         <div class="form-group">
                             <label class="form-label">Meta Etiketler<span class="form-required">*</span></label>
-                            <input type="text" class="form-control" name="meta_etiketler" value="{{$sayfa->baslik}}" required/>
+                            <input type="text" class="form-control" name="meta_etiketler" value="{{$sayfa->meta_etiketler}}" required/>
                         </div>
                         <div class="form-group">
                             <label class="form-label">Menü</label>
                             <select class="form-control custom-select" name="menu" id="menu">
                                 @foreach($menuler as $menu)
-                                    <option value="{{$menu->id}}" {{($sayfa->menu_id == $menu->id ? 'selected' : '')}}>{{$menu->menu_adi}}</option>
+                                    <option value="{{$menu->id}}" {{($sayfa->menu_id == $menu->id ? 'selected' : '')}}>{{$menu->baslik}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -43,7 +43,7 @@
                             </div>
                         </div>
                         <input type="hidden" name="id" value="{{$sayfa->id}}">
-                        <button type="submit" class="btn btn-pill btn-success">Sayfa Ekle</button>
+                        <button type="submit" class="btn btn-pill btn-success">Sayfa Düzenle</button>
                     </fieldset>
                 </form>
             </div>
