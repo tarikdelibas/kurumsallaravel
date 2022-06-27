@@ -100,7 +100,7 @@
                                         <ul class="dropdown-menu" role="menu">
                                             @foreach($menuler as $menu)
                                                 @if($menu->id==1)
-                                                    <li><a href="about.html">asd</a></li>
+                                                    <li><a href="#">{{$menu->baslik}}</a></li>
                                                 @endif
                                             @endforeach
                                         </ul>
@@ -134,7 +134,7 @@
                                     <li class="nav-item"><a class="nav-link" href="{{route('iletisim')}}">İletişim</a></li>
 
                                     <li class="header-get-a-quote">
-                                        <a class="btn btn-primary" href="contact.html">Teklif Al</a>
+                                        <a class="btn btn-primary" href="#"><span class="social-icon"><i class="fab fa-whatsapp"></i></span> Destek</a>
                                     </li>
                                 </ul>
                             </div>
@@ -163,13 +163,13 @@
                         <p>{{$site_ayarlar_provider->site_adres}}</p>
                         <div class="footer-social">
                             <ul>
-                                <li><a href="https://facebook.com/themefisher" aria-label="Facebook"><i
+                                <li><a href="{{$site_ayarlar_provider->site_facebook}}" aria-label="Facebook"><i
                                             class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="https://twitter.com/themefisher" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                                <li><a href="{{$site_ayarlar_provider->site_twitter}}" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                                 </li>
-                                <li><a href="https://instagram.com/themefisher" aria-label="Instagram"><i
+                                <li><a href="{{$site_ayarlar_provider->site_instagram}}" aria-label="Instagram"><i
                                             class="fab fa-instagram"></i></a></li>
-                                <li><a href="https://github.com/themefisher" aria-label="Github"><i class="fab fa-github"></i></a></li>
+                                <li><a href="{{$site_ayarlar_provider->site_youtube}}" aria-label="Youtube"><i class="fab fa-youtube"></i></a></li>
                             </ul>
                         </div><!-- Footer social end -->
                     </div><!-- Col end -->
@@ -186,8 +186,14 @@
                     <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
                         <h3 class="widget-title">İletişim</h3>
                         <div class="working-hours">
-                            <br><br> <span class="fa fa-location-arrow"></span> <span class="text-right">{{$site_ayarlar_provider->site_adres}} </span>
-                            <br><br> <span class="fa fa-phone"></span> <span class="text-right">{{$site_ayarlar_provider->site_telefon}} </span>
+                            <span class="fa fa-location-arrow"></span> <span class="text-right">{{$site_ayarlar_provider->site_adres}} </span>
+                            <br> <span class="fa fa-phone"></span> <span class="text-right"><a href="tel:{{$site_ayarlar_provider->site_telefon}}"> {{$site_ayarlar_provider->site_telefon}} </a></span>
+                            <br> <span class="fa fa-mail-bulk"></span> <span class="text-right"><a href="mailto:{{$site_ayarlar_provider->site_mail}}">{{$site_ayarlar_provider->site_mail}} </a></span>
+                            <br> <span class="fa fa-phone"></span> <span class="text-right"><a href="tel:{{$site_ayarlar_provider->site_telefon}}">Muhasebe: {{$site_ayarlar_provider->site_telefon}} </a></span>
+                            <br> <span class="fa fa-mail-bulk"></span> <span class="text-right"><a href="mailto:{{$site_ayarlar_provider->site_mail}}">muhasebe@egebombe.com.tr </a></span>
+                            <br> <span class="fa fa-phone"></span> <span class="text-right"><a href="tel:{{$site_ayarlar_provider->site_telefon}}">Satınalma: {{$site_ayarlar_provider->site_telefon}} </a></span>
+                            <br> <span class="fa fa-mail-bulk"></span> <span class="text-right"><a href="mailto:{{$site_ayarlar_provider->site_mail}}">satinalma@egebombe.com.tr </a></span>
+
                         </div>
                     </div><!-- Col end -->
                 </div><!-- Row end -->
@@ -231,8 +237,6 @@
     <script src="/frontend/plugins/colorbox/jquery.colorbox.js"></script>
     <!-- shuffle -->
     <script src="/frontend/plugins/shuffle/shuffle.min.js" defer></script>
-
-
     <!-- Google Map API Key-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
     <!-- Google Map Plugin-->

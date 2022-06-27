@@ -20,7 +20,7 @@ Route::get('/urunler','FrontendController@urunler')->name('urunler');
 Route::get('/urun/{slug}','FrontendController@urunDetay')->name('urunDetay');
 Route::get('/faaliyetalanlari','FrontendController@projeler')->name('projeler');
 Route::get('/faaliyet/{slug}','FrontendController@projeDetay')->name('projeDetay');
-#Route::get('/sayfa/{slug}','FrontendController@sayfaGoster')->name('sayfaGoster');
+Route::get('/sayfa/{slug}','FrontendController@sayfaGoster')->name('sayfaGoster');
 Route::get('/iletisim','FrontendController@iletisim')->name('iletisim');
 Route::get('/blog','FrontendController@blog')->name('blog');
 Route::get('/blog/{slug}','FrontendController@blogDetay')->name('blogDetay');

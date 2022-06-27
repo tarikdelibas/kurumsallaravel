@@ -53,7 +53,7 @@
                                 </div><!-- Col end -->
                                 <div class="col-md-4 text-center text-md-right mt-3 mt-md-0">
                                     <div class="call-to-action-btn">
-                                        <a class="btn btn-primary" href="#">Teklif Alın</a>
+                                        <a class="btn btn-primary" href=""><span class="social-icon"><i class="fab fa-whatsapp"></i></span> Bilgi Alın</a>
                                     </div>
                                 </div><!-- col end -->
                             </div><!-- row end -->

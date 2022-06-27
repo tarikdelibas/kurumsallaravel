@@ -14,8 +14,9 @@ class FrontendController extends Controller
 {
     public function index()
     {
+        $yazilar = Yazilar::all();
         $slider = SiteSlider::all();
-        return view('frontend.index', compact('slider'));
+        return view('frontend.index', compact('slider', 'yazilar'));
     }
     public function hizmetler()
     {
@@ -51,11 +52,17 @@ class FrontendController extends Controller
     }
     public function blogDetay($slug)
     {
-        $yazi = Yazilar::where('slug',$slug)->fisrt();
-        return view('frontend.blogDetay', compact('yazi'));
+        $tumYazilar =Yazilar::all();
+        $yazi = Yazilar::where('slug',$slug)->first();
+        return view('frontend.blogDetay', compact('yazi', 'tumYazilar'));
     }
     public function iletisim()
     {
         return view('frontend.iletisim');
+    }
+    public function sayfaGoster($slug)
+    {
+        $sayfa = Sayfalar::where('slug',$slug)->first();
+        return view('frontend.sayfaGoster', compact('sayfa'));
     }
 }

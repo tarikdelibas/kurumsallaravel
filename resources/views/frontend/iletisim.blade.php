@@ -54,7 +54,7 @@
             <div class="gap-60"></div>
 
             <div class="google-map">
-                <div id="map" class="map" data-latitude="40.712776" data-longitude="-74.005974" data-marker="images/marker.png" data-marker-name="Constra"></div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12500.751201159297!2d27.2215941!3d38.4371309!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3bf7b8c32167a371!2sEge%20Bombe%20Sanayi!5e0!3m2!1str!2str!4v1656340232091!5m2!1str!2str" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
 
             <div class="gap-40"></div>

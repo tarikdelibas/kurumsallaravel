@@ -1,4 +1,7 @@
 @extends('frontend.template')
+@section('baslik', 'Blog | '.$site_ayarlar_provider->site_baslik)
+@section('description', $site_ayarlar_provider->site_meta_aciklama)
+@section('keywords', $site_ayarlar_provider->site_keywords)
 @section('icerik')
 
     <section id="main-container" class="main-container">

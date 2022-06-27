@@ -1,4 +1,7 @@
 @extends('frontend.template')
+@section('baslik', 'Anasayfa | '.$site_ayarlar_provider->site_baslik)
+@section('description', $site_ayarlar_provider->site_meta_aciklama)
+@section('keywords', $site_ayarlar_provider->site_keywords)
 @section('icerik')
 <div class="banner-carousel banner-carousel-2 mb-0">
     @foreach($slider as $slayt)
@@ -24,7 +27,7 @@
             <div class="row">
                 <div class="col-md-8 text-center text-md-left">
                     <div class="call-to-action-text">
-                        <h3 class="action-title">Sizi dinliyoruz ve ihtiyaçlarınıza çözüm üretiyoruz</h3>
+                        <h3 class="action-title">SİZİ DİNLİYORUZ VE İHTİYAÇLARINIZA ÇÖZÜM ÜRETİYORUZ</h3>
                     </div>
                 </div><!-- Col end -->
                 <div class="col-md-4 text-center text-md-right mt-3 mt-md-0">
@@ -96,51 +99,13 @@
         </div><!-- Content row end -->
     </div><!-- Container end -->
 </section><!-- Feature are end -->
-
-<section id="ts-service-area" class="ts-service-area pb-0">
-    <div class="container">
-        <div class="row text-center">
-            <div class="col-12">
-                <h2 class="section-title">Bombe Konusunda Uzmanız</h2>
-                <h3 class="section-sub-title">Neler Yapıyoruz</h3>
-            </div>
-        </div>
-        <!--/ Title row end -->
-
-        <div class="row">
-            <div class="col-lg-4">
-                @foreach($hizmetler as $hizmet)
-                    <div class="ts-service-box d-flex">
-                        <div class="ts-service-box-img">
-                            <img loading="lazy" src="/frontend/images/icon-image/service-icon3.png" alt="{{$hizmet->slug}}" >
-                        </div>
-                        <div class="ts-service-box-info">
-                            <h3 class="service-box-title"><a href="{{route('hizmetDetay', $hizmet->slug)}}">{{$hizmet->baslik}}</a></h3>
-                            <p>{{$hizmet->kisa_aciklama}}</p>
-                        </div>
-                    </div><!-- Service 1 end -->
-                @endforeach
-
-            </div><!-- Col end -->
-
-            <div class="col-lg-4 text-center">
-                <img loading="lazy" class="img-fluid" src="/uploads/bombe.jpeg" alt="service-avater-image">
-            </div><!-- Col end -->
-
-
-        </div><!-- Content row end -->
-
-    </div>
-    <!--/ Container end -->
-</section><!-- Service end -->
-
 <section class="subscribe no-padding">
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
                 <div class="subscribe-call-to-acton">
-                    <h3>Yardımcı olabilir miyiz?</h3>
-                    <h4>{{$site_ayarlar_provider->site_telefon}}</h4>
+                    <h3>YARDIMCI OLABİLİR MİYİZ?</h3>
+                    <h4><a href="tel:{{$site_ayarlar_provider->site_telefon}}"> {{$site_ayarlar_provider->site_telefon}}</a></h4>
                 </div>
             </div><!-- Col end -->
 
@@ -167,6 +132,43 @@
     <!--/ Container end -->
 </section>
 <!--/ subscribe end -->
+<section id="ts-service-area" class="ts-service-area pb-0">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-12">
+                <h2 class="section-title">Bombe Konusunda Uzmanız</h2>
+                <h3 class="section-sub-title">Neler Yapıyoruz</h3>
+            </div>
+        </div>
+        <!--/ Title row end -->
+
+        <div class="row">
+            <div class="col-lg-4">
+                @foreach($hizmetler as $hizmet)
+                    {{$loop->count}}
+                    <div class="ts-service-box d-flex">
+                        <div class="ts-service-box-img">
+                            <img loading="lazy" src="/frontend/images/icon-image/service-icon3.png" alt="{{$hizmet->slug}}" >
+                        </div>
+                        <div class="ts-service-box-info">
+                            <h3 class="service-box-title"><a href="{{route('hizmetDetay', $hizmet->slug)}}">{{$hizmet->baslik}}</a></h3>
+                            <p>{{$hizmet->kisa_aciklama}}</p>
+                        </div>
+                    </div><!-- Service 1 end -->
+                @endforeach
+
+            </div><!-- Col end -->
+
+            <div class="col-lg-4 text-center">
+                <img loading="lazy" class="img-fluid" src="/uploads/bombe.jpeg" alt="service-avater-image">
+            </div><!-- Col end -->
+
+        </div><!-- Content row end -->
+    </div>
+    <!--/ Container end -->
+</section><!-- Service end -->
+
+
 <section id="project-area" class="project-area solid-bg">
     <div class="container">
         <div class="row text-center">
@@ -212,5 +214,47 @@
     </div>
     <!--/ Container end -->
 </section><!-- Project area end -->
+<section id="news" class="news">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-12">
+                <h2 class="section-title">Blog</h2>
+                <h3 class="section-sub-title">SON YAZILARIMIZ</h3>
+            </div>
+        </div>
+        <!--/ Title row end -->
 
+        <div class="row">
+            @foreach($yazilar as $yazi)
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="latest-post">
+                    <div class="latest-post-media">
+                        <a href="{{route('blogDetay', $yazi->slug)}}" class="latest-post-img">
+                            <img loading="lazy" class="img-fluid" src="/{{$yazi->gorsel}}" alt="{{$yazi->baslik}}">
+                        </a>
+                    </div>
+                    <div class="post-body">
+                        <h4 class="post-title">
+                            <a href="{{route('blogDetay', $yazi->slug)}}" class="d-inline-block">{{$yazi->baslik}}</a>
+                        </h4>
+                        <div class="latest-post-meta">
+                    <span class="post-item-date">
+                      <i class="fa fa-clock-o"></i> {{$yazi->created_at}}
+                    </span>
+                        </div>
+                    </div>
+                </div><!-- Latest post end -->
+            </div><!-- 1st post col end -->
+            @endforeach
+        </div>
+        <!--/ Content row end -->
+
+        <div class="general-btn text-center mt-4">
+            <a class="btn btn-primary" href="{{route('blog')}}">Tüm Yazılar</a>
+        </div>
+
+    </div>
+    <!--/ Container end -->
+</section>
+<!--/ News end -->
 @endsection

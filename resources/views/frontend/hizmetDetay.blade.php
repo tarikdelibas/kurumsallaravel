@@ -1,4 +1,7 @@
 @extends('frontend.template')
+@section('baslik', 'Hizmet | '.$hizmetDetay->baslik)
+@section('description', $hizmetDetay->kisa_aciklama)
+@section('keywords', $hizmetDetay->meta_etiketler)
 @section('icerik')
 
 <section id="main-container" class="main-container">
