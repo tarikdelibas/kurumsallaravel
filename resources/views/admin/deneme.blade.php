@@ -1,2 +1,2 @@
 <?php
-"deneme to main";
+"denemeden maine";
