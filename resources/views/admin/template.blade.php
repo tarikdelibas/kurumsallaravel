@@ -45,7 +45,7 @@
             <div class="container">
                 <div class="d-flex">
                     <a class="header-brand" href="{{route('admin.index')}}">
-                        <img src="" class="header-brand-img" alt="Site Adı">
+                        <img src="" class="header-brand-img" alt="Site Adi">
                     </a>
                     <div class="d-flex order-lg-2 ml-auto">
                         <div class="dropdown">
